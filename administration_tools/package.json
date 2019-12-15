@@ -2,9 +2,9 @@
 	"author": "Blue Mountains",
 	"version": "1.0",
 	"server_scripts": [
-		"freeroam_s.lua"
+		"admin_s.lua"
 	],
 	"client_scripts": [
-		"freeroam_c.lua"
+		"admin_c.lua"
 	]
 }
