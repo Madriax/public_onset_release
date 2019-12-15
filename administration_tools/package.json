@@ -1,5 +1,5 @@
 {
-	"author": "Blue Mountains",
+	"author": "Alexandre Duvois",
 	"version": "1.0",
 	"server_scripts": [
 		"admin_s.lua"
