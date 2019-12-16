@@ -6,5 +6,9 @@
 	],
 	"client_scripts": [
 		"admin_c.lua"
+	],
+
+	"files": [
+		"gui/gui.html"
 	]
 }
