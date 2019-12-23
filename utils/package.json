@@ -6,14 +6,17 @@
         "chat_s.lua",
         "cord_s.lua",
 		"voice_s.lua",
-		"npc_s.lua"
+		"npc_s.lua",
+		"environement_s.lua",
+		"mysql_s.lua"
 	],
 	"client_scripts": [
         "noclip_c.lua",
         "chat_c.lua",
         "cord_c.lua",
 		"voice_c.lua",
-		"npc_c.lua"
+		"npc_c.lua",
+		"environement_c.lua"
 	],
 
 	"files": [
