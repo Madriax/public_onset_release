@@ -26,3 +26,7 @@ end)
 AddEvent("OnPackageStop", function()
 	mariadb_close(sql)
 end)
+
+AddFunctionExport("getSQL", function()
+	return sql
+end)
