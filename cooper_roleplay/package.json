@@ -5,8 +5,10 @@
 		"base_s.lua"
 	],
 	"client_scripts": [
+		"base_c.lua"
 	],
 
 	"files": [
+		"gui/register.html"
 	]
 }

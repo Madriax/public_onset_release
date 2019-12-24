@@ -1,4 +1,6 @@
 local spawncords = {176496.546875, 211517.046875, 1300.2015380859, -96.0}
+utils = ImportPackage("utils")
+sql = utils.getSQL()
 
 AddEvent("OnPlayerJoin", function(player)
 
@@ -16,10 +18,10 @@ AddEvent("OnPlayerJoin", function(player)
 
 	if playerExist(player) then
 		loadUser(player)
-		SetPlayerSpawnLocation(player, GetPlayerPropertyValue(player, position))
+		SetPlayerSpawnLocation(player, table.unpack(GetPlayerPropertyValue(player, position)))
 	else
+		CallRemoteEvent(player, "showRegisterUI")
 		SetPlayerSpawnLocation(player, table.unpack(spawncords))
-
 	end
 
 
@@ -29,5 +31,10 @@ AddEvent("OnPlayerJoin", function(player)
 end)
 
 function playerExist(player)
-	return false
+	local query = mariadb_prepare(sql, "SELECT count(1) FROM users WHERE steamid = ? LIMIT 1",
+    	tostring(GetPlayerSteamId(player))
+	)
+	mariadb_async_query(sql, query, function()
+		return (mariadb_get_row_count() == 1)
+	end)
 end
